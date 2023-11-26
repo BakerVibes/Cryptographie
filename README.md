@@ -1,4 +1,5 @@
-# Cryptage de César
+# Cryptage de César en langage python
+# D'abord vous devez choisir l'opération à exécuter (crypter ou décrypter), ensuite vous entrez la valeur du texte à crypter ou décrypter. Et enfin vous entrez la valeur du décalage
 
 def cryptage (chaine: str, decalage: int)-> str:    
     message = ""
