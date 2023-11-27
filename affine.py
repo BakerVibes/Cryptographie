@@ -1,12 +1,16 @@
 import math
 
 def cryptage(chaine:str, a:int, b:int) -> str:
-    # Faire le cryptage
-    chaine = chaine.upper()
+     # Faire le cryptage    
     message = ''
     for i in chaine:
-        lettre = chr(((a * (ord(i) - 65) + b) % 26) + 65)
-        message += lettre                
+        if i.isupper():
+            lettre = chr(((a * (ord(i) - 65) + b) % 26) + 65)
+        elif i.islower():
+            lettre = chr(((a * (ord(i) - 97) + b) % 26) + 97)
+        elif i == ' ':
+            lettre = i
+        message += lettre            
     return message
     
 #Entrer la valeur de a
@@ -22,4 +26,4 @@ if pgcd == 1: # a et 26 sont premiers entre eux
     #Afficher le message crypté
     print("Message crypté : ",cryptage(chaine, a, b))
 else : # a et 26 ne sont pas premiers entre eux
-    print("Le nombre ",a, " n'est pas premier avec 26.")        
+    print("Le nombre ",a, " n'est pas premier avec 26.")
