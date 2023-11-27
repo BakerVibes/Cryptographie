@@ -1,0 +1,10 @@
+# César
+Le chiffrement de César consiste à déplacer chaque lettre d'une chaîne par un certain nombre de positions dans l'alphabet, déterminé par le décalage (variable "decalage"). Pour le cryptage, chaque lettre est remplacée par celle qui se trouve à la position (index) actuelle plus le décalage, modulo 26 pour rester dans l'alphabet. Le déchiffrement est similaire, mais en utilisant un décalage négatif.
+
+# Polybe
+Le chiffrement de Polybe repose sur un carré 5x5 où chaque lettre de l'alphabet (sauf 'J') est associée à une paire de coordonnées ('I' et 'J' possédant les mêmes coordonnées). Le carré est construit à partir d'une lettre de départ (cryptage par lettre) ou d'un mot-clé (cryptage par mot-clé). Pour le cryptage, chaque lettre de la chaîne est remplacée par ses coordonnées dans le carré de Polybe. Le déchiffrement inverse ce processus, retrouvant les lettres d'origine.
+
+# Affine
+Le chiffrement affine utilise une transformation mathématique de la forme (ax + b) % 26 sur chaque lettre alphabétique d'une chaîne. Les paramètres 'a' et 'b' sont des entiers. Pour le cryptage, chaque lettre est remplacée par le résultat de cette formule, modulo 26 pour rester dans l'alphabet. Le déchiffrement utilise l'inverse modulaire pour restaurer le message original. L'inverse modulaire de 'a' est calculé comme pow(a, -1, 26).
+
+Ces explications détaillées décrivent les étapes spécifiques effectuées par chaque méthode de cryptage et de décryptage.
