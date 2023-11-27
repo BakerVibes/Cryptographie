@@ -26,6 +26,8 @@ def cryptageLettre (chaine:str, lettre:str)->str:
     for i in chaine:
         if i in carre:
             message += carre[i]
+        elif i == ' ':
+            message = i
     return message
 
 def cryptageMot(chaine: str, mot: str) -> str:
@@ -60,6 +62,8 @@ def cryptageMot(chaine: str, mot: str) -> str:
     for i in chaine:
         if i in carre:
             message += carre[i]
+        elif i == ' ':
+            message = i
     return message
 
 def decryptageLettre(code: str, lettre: str) -> str:
