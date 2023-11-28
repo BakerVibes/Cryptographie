@@ -1,13 +1,16 @@
 import math
 
-def cryptage(chaine:str, a:int, b:int) -> str:
-     # Faire le cryptage    
+def cryptage(chaine: str, a: int, b: int) -> str:
+    # Faire le cryptage    
     message = ''
     for i in chaine:
-        if i.isupper():
-            lettre = chr(((a * (ord(i) - 65) + b) % 26) + 65)
-        elif i.islower():
-            lettre = chr(((a * (ord(i) - 97) + b) % 26) + 97)
+        if i.isalpha():
+            if i.isupper():
+                # Appliquer la formule de chiffrement affine pour les lettres majuscules
+                lettre = chr(((a * (ord(i) - 65) + b) % 26) + 65)
+            elif i.islower():
+                # Appliquer la formule de chiffrement affine pour les lettres minuscules
+                lettre = chr(((a * (ord(i) - 97) + b) % 26) + 97)
         else:
             lettre = i
         message += lettre            
@@ -19,10 +22,13 @@ def decryptage(chaine: str, a: int, b: int) -> str:
 
     message = ''
     for i in chaine:
-        if i.isupper():
-            lettre = chr(((a_inv * (ord(i) - 65 - b)) % 26) + 65)
-        elif i.islower():
-            lettre = chr(((a_inv * (ord(i) - 97 - b)) % 26) + 97)
+        if i.isalpha():
+            if i.isupper():
+                # Appliquer la formule de déchiffrement affine pour les lettres majuscules
+                lettre = chr(((a_inv * (ord(i) - 65 - b)) % 26) + 65)
+            elif i.islower():
+                # Appliquer la formule de déchiffrement affine pour les lettres minuscules
+                lettre = chr(((a_inv * (ord(i) - 97 - b)) % 26) + 97)
         else:
             lettre = i
         message += lettre
@@ -37,11 +43,11 @@ if pgcd == 1: # a et 26 sont premiers entre eux
     b = int(input("Entrez la valeur du paramètre b : "))    
     if choix == 1:
         chaine = input("Entrez le texte que vous voulez crypter : ")
-        print("Message crypté : ",cryptage(chaine, a, b))
+        print("Message crypté : ", cryptage(chaine, a, b))
     elif choix == 2:
         chaine = input("Entrez le texte que vous voulez décrypter : ")
-        print("Message crypté : ",decryptage(chaine, a, b))
+        print("Message décrypté : ", decryptage(chaine, a, b))
     else:
         print("Choix erroné!!!")
-else : # a et 26 ne sont pas premiers entre eux
-    print("Le nombre ",a, " n'est pas premier avec 26.")        
+else: # a et 26 ne sont pas premiers entre eux
+    print("Le nombre ", a, " n'est pas premier avec 26.")
