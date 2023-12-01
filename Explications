@@ -1,5 +1,5 @@
 ### César
-# Explication des Fonctions de Cryptage et Décryptage
+### Explication des Fonctions de Cryptage et Décryptage
 
 1. Fonction de Cryptage (`cryptage`)
 
@@ -30,11 +30,10 @@
 - Le message décrypté est renvoyé.
 
 Ces fonctions permettent d'appliquer le chiffrement de César, un décalage fixe, aux lettres d'une chaîne de caractères, et de les décrypter en sens inverse.
-# Exemples d'Application du Cryptage et Décryptage
 
+## Exemples d'Application du Cryptage et Décryptage
 # Cryptage
 Supposons que l'utilisateur souhaite crypter la chaîne "HELLO" avec un décalage de 3.
-
 1. L'utilisateur choisit de crypter en entrant 1.
 2. Il entre la chaîne à crypter : HELLO.
 3. Il entre la valeur du décalage : 3.
@@ -43,14 +42,13 @@ Supposons que l'utilisateur souhaite crypter la chaîne "HELLO" avec un décalag
    
 # Décryptage
 Si l'utilisateur souhaite maintenant décrypter le message "KHOOR" avec le même décalage de 3.
-
 1. L'utilisateur choisit de décrypter en entrant 2.
 2. Il entre la chaîne à décrypter : KHOOR.
 3. Il entre la valeur du décalage : 3.
 4. Le programme affiche le message décrypté :
      Message déchiffré : HELLO
    
-# Exemple Complet d'Exécution
+## Exemple Complet d'Exécution
 # Chiffrage
 Tapez 1 pour chiffrer et 2 pour déchiffrer : 1
 Entrez une chaîne de caractères à crypter : HELLO
@@ -68,7 +66,64 @@ Ces exemples illustrent comment l'utilisateur peut interagir avec le programme p
 # Polybe
 Le chiffrement de Polybe repose sur un carré 5x5 où chaque lettre de l'alphabet (sauf 'J') est associée à une paire de coordonnées ('I' et 'J' possédant les mêmes coordonnées). Le carré est construit à partir d'une lettre de départ (cryptage par lettre) ou d'un mot-clé (cryptage par mot-clé). Pour le cryptage, chaque lettre de la chaîne est remplacée par ses coordonnées dans le carré de Polybe. Le déchiffrement inverse ce processus, retrouvant les lettres d'origine.
 
-# Affine
-Le chiffrement affine utilise une transformation mathématique de la forme (ax + b) % 26 sur chaque lettre alphabétique d'une chaîne. Les paramètres 'a' et 'b' sont des entiers. Pour le cryptage, chaque lettre est remplacée par le résultat de cette formule, modulo 26 pour rester dans l'alphabet. Le déchiffrement utilise l'inverse modulaire pour restaurer le message original. L'inverse modulaire de 'a' est calculé comme pow(a, -1, 26).
+### Affine
+### Explication des Fonctions de Chiffrement Affine et Déchiffrement Affine
+
+1. Fonction de Chiffrement Affine (`chiffrement_affine`)
+
+- La fonction prend trois paramètres en entrée : chaine (la chaîne de caractères à crypter), a (la première partie de la clé), et b (la deuxième partie de la clé).
+
+- Elle itère sur chaque caractère de la chaîne fournie.
+
+- Pour chaque caractère alphabétique, elle applique la formule (a * ord(i) + b) % 26 pour effectuer la transformation affine.
+
+- Le résultat est converti en lettre majuscule par la formule (résultat % 26) + 65.
+
+- Les caractères non alphabétiques sont conservés tels quels dans le message résultant.
+
+- Le message crypté est renvoyé.
+
+2. Fonction de Déchiffrement Affine (`dechiffrement_affine`)
+
+- La fonction de décryptage suit une logique similaire à celle du cryptage.
+
+- Elle utilise la formule (a_inv * (ord(i) - b)) % 26 pour décrypter chaque caractère alphabétique.
+
+- a_inv est l'inverse modulaire de a par rapport à 26.
+
+- Le résultat est converti en lettre majuscule par la formule (résultat % 26) + 65.
+
+- Les caractères non alphabétiques sont également préservés inchangés dans le message résultant.
+
+- Le message décrypté est renvoyé.
+
+## Processus d'Utilisation
+
+1. L'utilisateur choisit de crypter ou décrypter en entrant 1 ou 2.
+
+2. Il entre la chaîne à traiter, par exemple, "HELLO".
+
+3. Il entre les parties de la clé (`a` et `b`) selon la demande.
+
+4. La fonction correspondante (chiffrement ou déchiffrement) est appelée avec les paramètres fournis.
+
+5. Le résultat (message crypté ou décrypté) est affiché.
+
+Ces fonctions permettent d'appliquer le chiffrement affine, une généralisation du chiffrement de César, aux lettres d'une chaîne de caractères, et de les décrypter en utilisant une clé inverse.
 
 Ces explications détaillées décrivent les étapes spécifiques effectuées par chaque méthode de cryptage et de décryptage.
+   
+## Exemple Complet d'Exécution
+# Cryptage
+Tapez 1 pour chiffrer et 2 pour déchiffrer : 1
+Entrez une chaîne de caractères à crypter : HELLO
+Entrez la valeur du décalage : 3
+Message chiffré : KHOOR
+
+#Décalage
+Tapez 1 pour chiffrer et 2 pour déchiffrer : 2
+Entrez une chaîne de caractères à déchiffrer : KHOOR
+Entrez la valeur du décalage : 3
+Message déchiffré : HELLO
+
+Ces exemples illustrent comment l'utilisateur peut interagir avec le programme pour crypter et décrypter des messages en utilisant le chiffrement de César avec un décalage spécifié.
