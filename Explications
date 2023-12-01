@@ -1,5 +1,5 @@
 ### César
-### Explication des Fonctions de Cryptage et Décryptage
+## Explication des Fonctions de Cryptage et Décryptage
 
 1. Fonction de Cryptage (`cryptage`)
 
@@ -30,23 +30,6 @@
 - Le message décrypté est renvoyé.
 
 Ces fonctions permettent d'appliquer le chiffrement de César, un décalage fixe, aux lettres d'une chaîne de caractères, et de les décrypter en sens inverse.
-
-## Exemples d'Application du Cryptage et Décryptage
-# Cryptage
-Supposons que l'utilisateur souhaite crypter la chaîne "HELLO" avec un décalage de 3.
-1. L'utilisateur choisit de crypter en entrant 1.
-2. Il entre la chaîne à crypter : HELLO.
-3. Il entre la valeur du décalage : 3.
-4. Le programme affiche le message crypté :
-     Message chiffré : KHOOR
-   
-# Décryptage
-Si l'utilisateur souhaite maintenant décrypter le message "KHOOR" avec le même décalage de 3.
-1. L'utilisateur choisit de décrypter en entrant 2.
-2. Il entre la chaîne à décrypter : KHOOR.
-3. Il entre la valeur du décalage : 3.
-4. Le programme affiche le message décrypté :
-     Message déchiffré : HELLO
    
 ## Exemple Complet d'Exécution
 # Chiffrage
@@ -124,7 +107,7 @@ Ce code Python propose une implémentation du chiffrement par Carré de Polybe, 
 Ce script permet à l'utilisateur de choisir entre le chiffrement et le déchiffrement avec une lettre de départ ou un mot clé pour le carré de Polybe. Les fonctions cryptage et decryptage manipulent les coordonnées pour produire le message chiffré ou déchiffré.
 
 ### Affine
-### Explication des Fonctions de Chiffrement Affine et Déchiffrement Affine
+## Explication des Fonctions de Chiffrement Affine et Déchiffrement Affine
 
 1. Fonction de Chiffrement Affine (`chiffrement_affine`)
 
