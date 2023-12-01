@@ -63,8 +63,65 @@ Message déchiffré : HELLO
 
 Ces exemples illustrent comment l'utilisateur peut interagir avec le programme pour crypter et décrypter des messages en utilisant le chiffrement de César avec un décalage spécifié.
 
-# Polybe
-Le chiffrement de Polybe repose sur un carré 5x5 où chaque lettre de l'alphabet (sauf 'J') est associée à une paire de coordonnées ('I' et 'J' possédant les mêmes coordonnées). Le carré est construit à partir d'une lettre de départ (cryptage par lettre) ou d'un mot-clé (cryptage par mot-clé). Pour le cryptage, chaque lettre de la chaîne est remplacée par ses coordonnées dans le carré de Polybe. Le déchiffrement inverse ce processus, retrouvant les lettres d'origine.
+### Polybe
+## Description
+Ce code Python propose une implémentation du chiffrement par Carré de Polybe, une technique de cryptage basée sur un carré où chaque lettre est associée à une paire de coordonnées.
+
+## Fonctionnement des Fonctions
+1. Fonction de Chiffrement (`cryptage`)
+
+- La fonction prend trois paramètres en entrée : chaine (la chaîne de caractères à crypter), cle (la lettre ou le mot clé utilisé pour créer le carré de Polybe), et choix (1 pour chiffrer à partir d'une lettre, 2 pour chiffrer à partir d'un mot clé).
+
+- Elle crée un carré de Polybe en fonction de la lettre de départ ou du mot clé fourni.
+
+- Pour chaque caractère de la chaîne, elle détermine ses coordonnées dans le carré de Polybe.
+
+- Le caractère chiffré est obtenu en concaténant les coordonnées.
+
+- Le message chiffré est renvoyé.
+
+2. Fonction de Déchiffrement (`decryptage`)
+
+- La fonction de déchiffrement suit une logique similaire à celle du chiffrement.
+
+- Elle divise le code chiffré en paires de coordonnées.
+
+- Pour chaque paire de coordonnées, elle détermine le caractère associé dans le carré de Polybe.
+
+- Le message déchiffré est obtenu en concaténant ces caractères.
+
+- Le message déchiffré est renvoyé.
+
+## Exemple d'Utilisation du Chiffrement par Carré de Polybe
+# Chiffrement avec une Lettre de Départ
+1. L'utilisateur choisit de chiffrer à partir d'une lettre en entrant 1.
+2. Il entre la chaîne à chiffrer, par exemple, "HELLO".
+3. Il entre la lettre de départ du carré de Polybe, par exemple, "A".
+4. Le programme affiche le message chiffré :
+     Message chiffré : 12 25 12 12 15
+   
+# Chiffrement avec un Mot Clé
+1. L'utilisateur choisit de chiffrer à partir d'un mot clé en entrant 2.
+2. Il entre la chaîne à chiffrer, par exemple, "HELLO".
+3. Il entre le mot clé du carré de Polybe, par exemple, "PYTHON".
+4. Le programme affiche le message chiffré :
+     Message chiffré : 34 45 34 34 41
+   
+# Déchiffrement avec une Lettre de Départ
+1. L'utilisateur choisit de déchiffrer à partir d'une lettre en entrant 2.
+2. Il entre le code à déchiffrer, par exemple, "12 25 12 12 15".
+3. Il entre la lettre de départ du carré de Polybe, par exemple, "A".
+4. Le programme affiche le message déchiffré :
+     Message déchiffré : HELLO
+   
+# Déchiffrement avec un Mot Clé
+1. L'utilisateur choisit de déchiffrer à partir d'un mot clé en entrant 2.
+2. Il entre le code à déchiffrer, par exemple, "34 45 34 34 41".
+3. Il entre le mot clé du carré de Polybe, par exemple, "PYTHON".
+4. Le programme affiche le message déchiffré :
+     Message déchiffré : HELLO
+
+Ce script permet à l'utilisateur de choisir entre le chiffrement et le déchiffrement avec une lettre de départ ou un mot clé pour le carré de Polybe. Les fonctions cryptage et decryptage manipulent les coordonnées pour produire le message chiffré ou déchiffré.
 
 ### Affine
 ### Explication des Fonctions de Chiffrement Affine et Déchiffrement Affine
@@ -120,7 +177,7 @@ Entrez une chaîne de caractères à crypter : HELLO
 Entrez la valeur du décalage : 3
 Message chiffré : KHOOR
 
-#Décalage
+# Décalage
 Tapez 1 pour chiffrer et 2 pour déchiffrer : 2
 Entrez une chaîne de caractères à déchiffrer : KHOOR
 Entrez la valeur du décalage : 3
